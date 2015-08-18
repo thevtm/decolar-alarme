@@ -1,0 +1,19 @@
+{
+  "name": "decolar-scraper",
+  "version": "0.0.1",
+  "description": "Scrape voos Decolar",
+  "main": "DecolarScraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chai": "*",
+    "chai-as-promised": "*",
+    "lodash": "*",
+    "q": "*",
+    "request": "*",
+    "valid-url": "*"
+  },
+  "author": "Vinícius T. M.",
+  "license": "MIT"
+}

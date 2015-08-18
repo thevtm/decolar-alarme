@@ -1,0 +1,16 @@
+.DS_Store
+.project
+.idea
+.gitkeep
+npm-debug.log
+nbproject
+.settings
+
+# Ignora pastas "node_modules"
+node_modules
+lib/*/node_modules
+
+logs
+public/bower_components
+config/runtime.json
+config/local.*
