@@ -16,6 +16,7 @@
     "node": ">=0.8.8"
   },
   "dependencies": {
+    "bunyan": "^1.4.0",
     "config": "*",
     "express": "^4.11.0",
     "forever": "^0.15.1",
@@ -43,7 +44,7 @@
     "uninstall-all": "node bin/uninstall-all.js",
     "prepublish": "npm prune",
     "start": "./bin/start.sh",
-    "dev": "./bin/dev_start.sh",
+    "dev": "./bin/dev_start.sh | bunyan",
     "test": "mocha --require test/support/env --reporter spec --bail --check-leaks test/ test/acceptance/ lib/*/test/*.js",
     "test-watch": "mocha --watch --require test/support/env --reporter spec test/ test/acceptance/ lib/*/test/*.js",
     "pretest": "jshint lib test --config ./config/jshint.json --exclude-path ./.gitignore",
