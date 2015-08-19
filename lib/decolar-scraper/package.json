@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "bunyan": "^1.4.0",
     "chai": "*",
     "chai-as-promised": "*",
     "lodash": "*",
