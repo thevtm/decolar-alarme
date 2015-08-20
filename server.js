@@ -21,7 +21,7 @@ server.setup(function(runningApp) {
 
   runningApp.use('/hello', require('hello')); // attach to sub-route
   runningApp.use(require('routes')); // attach to root route
-  //runningApp.use('/', require('index'));
+  runningApp.use('/', require('index'));
   runningApp.use('/alarme', require('alarme'));
 
 
