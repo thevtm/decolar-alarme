@@ -24,6 +24,9 @@ server.setup(function(runningApp) {
   runningApp.use('/', require('index'));
   runningApp.use('/alarme', require('alarme'));
 
+  //---- Serve static content
+  runningApp.use('/public', express.static(__dirname + '/public'));
+
 
   // If you need websockets:
   // var socketio = require('socket.io')(runningApp.http);
