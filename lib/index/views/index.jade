@@ -1,32 +1,21 @@
-doctype
-html(lang="pt-br")
-  head
-    title Alarme Decolar
-    meta(charset="utf-8", name="viewport", content="width=device-width, initial-scale=1")
+extends ../../../views/layout
 
-    // Latest compiled and minified CSS & JS 
-    link(rel='stylesheet', media='screen', href='//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-    link(rel='stylesheet', media='screen', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css')
-    link(rel='stylesheet', media='screen', href='public/alarme.css')
-    script(src='//code.jquery.com/jquery.js')
-    
+append Scripts
+  link(rel='stylesheet', media='screen', href='public/index.css')
 
+block Content
+  .container-fluid.centered
 
-  body
-    .container-fluid
+    //- Cabeçario titulo
+    .row
+      .text-center
+        h1 Decolar Alarme
 
-      //- Cabeçario titulo
-      .row
-        .text-center
-          h1 Decolar Scraper
-
-      //- Formulario de busca
-      .row
-        form.form-horizontal.pull-right(method="GET", action="alarme", role="form")
-          .input-group.col-md-6.col-md-offset-3
-            input.form-control(name="url", type="url", autocomplete="off", value="http://www.decolar.com/shop/flights/results/oneway/POA/SAO/2015-12-25/1/0/0", placeholder="Decolar URL")
-            span.input-group-btn
-              button.btn.btn-default(type="submit")
-                span.glyphicon.glyphicon.glyphicon-plane
-
-  script(src='//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+    //- Formulario de busca
+    .row
+      form.form-horizontal.pull-right(method="GET", action="alarme", role="form")
+        .input-group.col-md-8.col-md-offset-2
+          input.form-control(name="url", type="url", autocomplete="off", value="http://www.decolar.com/shop/flights/results/oneway/POA/SAO/2015-12-25/1/0/0", placeholder="Decolar URL")
+          span.input-group-btn
+            button.btn.btn-default(type="submit")
+              span.glyphicon.glyphicon-plane
