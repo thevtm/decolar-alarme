@@ -31,7 +31,6 @@
     ]
   },
   "browserify-shim": {
-    "react": "global:React",
     "ramda": "global:R"
   }
 }
