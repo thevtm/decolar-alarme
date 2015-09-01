@@ -58,7 +58,7 @@ if [ ! $NODE_SERVE_STATIC ]; then
 fi
 
 if [ ! $NODE_HOT_RELOAD ]; then
-  export NODE_HOT_RELOAD=0
+  export NODE_HOT_RELOAD=2
 fi
 
 if [ !  $NODE_CONFIG_DIR ]; then
@@ -102,8 +102,8 @@ if [ $NODE_HOT_RELOAD -eq 1 ] && [ ! `which supervisor` ]; then
 fi
 
 # Let's make sure you NODE_HOT_RELOAD is set to one of the only two allowed values
-if [ ! $NODE_HOT_RELOAD -eq 1 ] && [ ! $NODE_HOT_RELOAD -eq 0 ]; then
-    echo "ERROR: The only two valid values for NODE_HOT_RELOAD are '1' and '0'. You are trying to set $NODE_HOT_RELOAD";
+if [ ! $NODE_HOT_RELOAD -eq 2 ] && [ ! $NODE_HOT_RELOAD -eq 1 ] && [ ! $NODE_HOT_RELOAD -eq 0 ]; then
+    echo "ERROR: The only two valid values for NODE_HOT_RELOAD are '1', '2' and '0'. You are trying to set $NODE_HOT_RELOAD";
     exit 1
 fi
 
@@ -120,8 +120,10 @@ if [ $NODE_HOT_RELOAD -eq 0 ]; then
     NCMD="$NCMD -l $NODE_LOG_DIR/forever.log"
     NCMD="$NCMD -o $NODE_LOG_DIR/out.log"
     NCMD="$NCMD -e $NODE_LOG_DIR/err.log"
-else
+elif [ $NODE_HOT_RELOAD -eq 1 ]; then
     NCMD="supervisor -n exit -w ./lib,$NODE_CONFIG_DIR,$NODE_LAUNCH_SCRIPT"
+else
+    NCMD="node $NODE_LAUNCH_SCRIPT"
 fi
 
 NCMD="$NCMD $NODE_LAUNCH_SCRIPT"
