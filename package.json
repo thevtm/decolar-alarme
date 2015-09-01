@@ -2,7 +2,7 @@
   "name": "nodebootstrap-based-app",
   "private": true,
   "description": "",
-  "author": "",
+  "author": "Vinícius Tabille Manjabosco",
   "license": {
     "type": "MIT",
     "url": ""
@@ -43,7 +43,8 @@
     "preinstall": "node bin/preinstall",
     "uninstall-all": "node bin/uninstall-all.js",
     "prepublish": "npm prune",
-    "start": "./bin/start.sh",
+    "start": "./bin/start.sh | bunyan",
+    "stop": "./bin/stop.sh",
     "dev": "./bin/dev_start.sh | bunyan",
     "test": "mocha --require test/support/env --reporter spec --bail --check-leaks test/ test/acceptance/ lib/*/test/*.js",
     "test-watch": "mocha --watch --require test/support/env --reporter spec test/ test/acceptance/ lib/*/test/*.js",
