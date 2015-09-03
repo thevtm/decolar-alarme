@@ -13,7 +13,7 @@
     "url": ""
   },
   "engines": {
-    "node": ">=0.8.8"
+    "node": "0.10.x"
   },
   "dependencies": {
     "bunyan": "^1.4.0",
