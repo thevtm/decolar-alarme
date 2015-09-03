@@ -3,9 +3,6 @@ var app = express();
 var server = require('http').Server(app);
 
 
-server.listen(process.env.PORT);
-
-
 // Choose your favorite view engine(s)
 app.set('view engine', 'jade');
 
@@ -19,3 +16,8 @@ app.use('/alarme', require('alarme'));
 
 //---- Serve static content
 app.use('/public', express.static(__dirname + '/public'));
+
+// Run server
+var PORT = process.env.PORT;
+console.log('Running on port: ' + PORT);
+server.listen(PORT);
