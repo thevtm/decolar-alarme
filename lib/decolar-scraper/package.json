@@ -9,7 +9,7 @@
   "dependencies": {
     "chai": "*",
     "chai-as-promised": "*",
-    "lodash": "*",
+    "ramda": "*",
     "q": "*",
     "request": "*",
     "valid-url": "*"
