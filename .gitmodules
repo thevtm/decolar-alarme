@@ -1,0 +1,3 @@
+[submodule "lib/decolar-scraper"]
+	path = lib/decolar-scraper
+	url = https://github.com/thevtm/decolar-scraper.git
