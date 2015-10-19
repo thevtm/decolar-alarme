@@ -3,10 +3,6 @@ var resolve = require('path').resolve;
 var join = require('path').join;
 var cp = require('child_process');
 
-// GIT Submodules
-cp.spawnSync('git', ['submodule', 'init'], { env: process.env, cwd: __dirname, stdio: 'inherit' });
-cp.spawnSync('git', ['submodule', 'update'], { env: process.env, cwd: __dirname, stdio: 'inherit' });
-
 // get library path
 var lib = resolve(__dirname, '../lib/');
 
