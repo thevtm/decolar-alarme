@@ -1,5 +1,0 @@
-app:
-  port: 3000
-  pub_dir: "/public"
-  csrf: false
-  cookie_secret: "asduasud091u2e09u23n9cuhn0812yu0vby12yb39c12x07y3bd0123c09=123c0708917xj7x01n"

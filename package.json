@@ -1,54 +1,49 @@
 {
-  "name": "nodebootstrap-based-app",
+  "name": "decolar-alarme",
   "private": true,
   "description": "",
+  "version": "2.0.0",
   "author": "Vinícius Tabille Manjabosco",
-  "license": {
-    "type": "MIT",
-    "url": ""
-  },
-  "main": "./server.js",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/thevtm/decolar-alarme"
   },
   "engines": {
     "node": "4.2.x"
   },
   "dependencies": {
-    "bunyan": "^1.4.0",
-    "config": "*",
-    "express": "^4.11.0",
-    "forever": "^0.15.1",
-    "hbs": "3.x",
-    "jade": "*",
-    "metalogger": "*",
-    "socket.io": "^1.3.6",
-    "underscore": "^1.7.0",
-    "yaml": "*"
+    "css-loader": "^0.25.0",
+    "decolar-scraper": "^0.2.8",
+    "file-loader": "^0.9.0",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.2",
+    "pug-html-loader": "^1.0.9",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "request": "^2.79.0",
+    "source-map-loader": "^0.1.5",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^1.2.0",
+    "typescript": "^2.0.9",
+    "webpack": "^1.13.3"
   },
   "devDependencies": {
-    "after": "^0.8.1",
-    "chai": "*",
-    "commander": "^2.6.0",
-    "glob": "^4.3.2",
-    "istanbul": "^0.3.2",
-    "jshint": "^2.5.x",
-    "mocha": "^2.1.0",
-    "should": "^4.4.4",
-    "supervisor": "^0.7.1"
+    "@types/jquery": "^2.0.34",
+    "@types/lodash": "^4.14.41",
+    "@types/node": "^6.0.46",
+    "@types/react": "^0.14.47",
+    "@types/react-dom": "^0.14.18",
+    "@types/webpack": "^1.12.35",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0-0",
+    "eslint-plugin-standard": "^2.0.1",
+    "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "preinstall": "node bin/preinstall",
-    "uninstall-all": "node bin/uninstall-all.js",
-    "prepublish": "npm prune",
-    "start": "./bin/start.sh | bunyan",
-    "stop": "./bin/stop.sh",
-    "dev": "./bin/dev_start.sh | bunyan",
-    "test": "mocha --require test/support/env --reporter spec --bail --check-leaks test/ test/acceptance/ lib/*/test/*.js",
-    "test-watch": "mocha --watch --require test/support/env --reporter spec test/ test/acceptance/ lib/*/test/*.js",
-    "pretest": "jshint lib test --config ./config/jshint.json --exclude-path ./.gitignore",
-    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/ test/acceptance/",
-    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/ test/acceptance/"
+    "build": "webpack --config webpack.prod.js",
+    "build-dev": "webpack --config webpack.dev.js",
+    "watch": "webpack-dev-server --progress --colors",
+    "dev": "webpack-dev-server --config webpack.dev.js --progress",
+    "prod": "webpack-dev-server --config webpack.prod.js --progress"
   }
 }
