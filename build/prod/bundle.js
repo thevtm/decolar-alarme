@@ -21550,7 +21550,7 @@
 	        return (React.createElement("form", {onSubmit: this.handleSubmit}, 
 	            React.createElement("div", {className: 'form-group has-feedback has-success has-error'}, 
 	                React.createElement("div", {className: 'input-group'}, 
-	                    React.createElement("input", {className: 'form-control', type: 'text', placeholder: 'Search for... React', value: this.state.decolarURL, onChange: this.handleChange}), 
+	                    React.createElement("input", {className: 'form-control', type: 'text', placeholder: 'Cole a URL da Decolar aqui...', value: this.state.decolarURL, onChange: this.handleChange}), 
 	                    React.createElement("span", {className: 'input-group-btn'}, 
 	                        React.createElement("button", {className: 'btn btn-default', type: 'submit'}, 
 	                            React.createElement("span", {className: 'glyphicon glyphicon-plane', "aria-hidden": 'true'})
@@ -23332,7 +23332,7 @@
 	    };
 	    Preco.prototype.updateState = function () {
 	        var _this = this;
-	        return jquery_1.getJSON("http://crossorigin.me/" + this.props.urlData)
+	        return jquery_1.getJSON("https://vtm-cors-proxy.herokuapp.com/" + this.props.urlData)
 	            .then(function (json) {
 	            var precos = _this.state.precos;
 	            var data = json.result.data;

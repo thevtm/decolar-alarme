@@ -14,7 +14,7 @@ interface PrecoState {
   inicializando: boolean,
   timerID?: number,
   partida?: string,
-  chegada?: string, 
+  chegada?: string,
   provedor?:string,
   precos: PrecosStatePreco[]
 }
@@ -22,9 +22,9 @@ interface PrecoState {
 export class Preco extends React.Component<PrecoProps, PrecoState> {
   constructor (props: PrecoProps) {
     super(props)
-    
+
     // 1. Define state inicial
-    this.state = { 
+    this.state = {
       inicializando: true,
       precos: new Array<PrecosStatePreco>()
     }
@@ -45,7 +45,7 @@ export class Preco extends React.Component<PrecoProps, PrecoState> {
 
     return precos.map(p => {
       const { preco, mask, datahora } = p
-      
+
       return (
         <div key={datahora.getTime()} className="row">
           <div className="pull-left">
@@ -97,8 +97,9 @@ export class Preco extends React.Component<PrecoProps, PrecoState> {
     )
   }
 
+
   updateState() {
-    return getJSON(`http://crossorigin.me/${this.props.urlData}`)
+    return getJSON(`https://vtm-cors-proxy.herokuapp.com/${this.props.urlData}`)
       .then((json: DecolarData) => {
         const precos = this.state.precos
         const data = json.result.data!
@@ -106,7 +107,7 @@ export class Preco extends React.Component<PrecoProps, PrecoState> {
         const cities = data.cities
         const airlines = data.airlines
         const minItem = _.minBy(items, 'emissionPrice.total.fare.raw')
-        
+
         const partida: string = cities[minItem.itinerariesBox.outboundLocations.departure.code]
         const chegada: string = cities[minItem.itinerariesBox.outboundLocations.arrival.code]
         const provedor: string = minItem.provider
